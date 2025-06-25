@@ -6,6 +6,9 @@ plugins {
 repositories {
     google()
     mavenCentral()
+    flatDir {
+        dirs("libs")
+    }
 }
 
 android {
@@ -57,13 +60,10 @@ afterEvaluate {
 }
 
 dependencies {
-    api(files("libs/ffmpeg-kit-full-gpl-6.0-2.aar"))
+    api(name = "ffmpeg-kit-full-gpl-6.0-2", ext = "aar")
 }
 
 configurations {
-    implementation {
-        isCanBeResolved = true
-    }
     api {
         isCanBeResolved = true
     }
