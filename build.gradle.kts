@@ -3,6 +3,11 @@ plugins {
     id("maven-publish") // Áp dụng plugin publish
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 android {
     namespace = "com.leansoft.ffmpeg.wrapper"
     compileSdk = 35
