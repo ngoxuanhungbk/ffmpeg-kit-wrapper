@@ -29,3 +29,17 @@ repositories {
 dependencies {
     implementation(name: 'ffmpeg-kit-full-gpl-6.0-2', ext: 'aar')
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.ngoxuanhungbk'
+                artifactId = 'ffmpeg-kit-wrapper'
+                version = '6.0.2'
+            }
+        }
+    }
+}
