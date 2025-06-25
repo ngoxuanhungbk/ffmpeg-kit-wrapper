@@ -60,7 +60,7 @@ afterEvaluate {
 }
 
 dependencies {
-    api(name = "ffmpeg-kit-full-gpl-6.0-2", ext = "aar")
+    api(files("libs/ffmpeg-kit-full-gpl-6.0-2.aar"))
 }
 
 configurations {
