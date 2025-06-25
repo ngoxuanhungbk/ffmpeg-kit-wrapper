@@ -1,6 +1,5 @@
 plugins {
     id("com.android.library") version "8.2.2"
-    id("org.jetbrains.kotlin.android") version "1.9.23" // Nếu bạn dùng Kotlin
     id("maven-publish") // Áp dụng plugin publish
 }
 
@@ -13,6 +12,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildFeatures {
+        dataBinding = false
+        viewBinding = false
     }
 
     buildTypes {
@@ -28,8 +32,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    publishing {
+        singleVariant("release")
     }
 }
 
