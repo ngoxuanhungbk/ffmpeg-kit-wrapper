@@ -57,5 +57,14 @@ afterEvaluate {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar"))))
+    api(files("libs/ffmpeg-kit-full-gpl-6.0-2.aar"))
+}
+
+configurations {
+    implementation {
+        isCanBeResolved = true
+    }
+    api {
+        isCanBeResolved = true
+    }
 }
